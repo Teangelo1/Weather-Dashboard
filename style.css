@@ -1,0 +1,33 @@
+body > #bg-color {
+    height: 100%;
+    width: 100%;
+    background-color: lightblue;
+    clip-path: polygon(25% 0%, 100% 0, 100% 50%, 0 100%, 0 100%, 0 0);
+    position: absolute;
+    z-index: -1;
+}
+
+.display-3 {
+    color: white;
+    font-family: 'Major Mono Display', cursive;
+    text-align: center;
+    border: solid white 3px;
+    
+}
+
+h1 {
+    font-family: 'Major Mono Display', cursive;
+    color: white;
+}
+#search-form {
+    height: 40%; 
+    position: fixed;
+    top: 90px; 
+    left: 0;
+    background-color: red;
+}
+
+.fas {
+    color: lightblue;
+
+}
