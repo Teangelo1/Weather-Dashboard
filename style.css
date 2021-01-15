@@ -19,15 +19,26 @@ h1 {
     font-family: 'Major Mono Display', cursive;
     color: white;
 }
-#search-form {
-    height: 40%; 
-    position: fixed;
-    top: 90px; 
-    left: 0;
-    background-color: red;
+
+.card-body {
+overflow: auto;
+clear: both;
+float: right;
+    
 }
 
 .fas {
     color: lightblue;
 
+}
+
+.card-title {
+    color: white;
+    background: lightblue;
+    font-family: 'Major Mono Display'
+}
+
+.btn.btn-primary {
+    background: lightblue;
+    border: white;
 }
