@@ -28,38 +28,57 @@
     </div>
     </div>
 
-    <div class="card" style="width: 18rem;">
-        <div class="card-body">
-            <h2 class="card-title">Weather Conditions</h2>
-            <input id="input" class="form-control my-0 py-1" type="text" placeholder="Enter City or State"
-                aria-label="search">
-            <a href="#" class="btn btn-primary">Search</a>
-            <ul class="recent-searches">
-            </ul>
+    <div class="container">
+       
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h2 class="card-title">Weather Conditions</h2>
+                <input id="input" class="form-control my-0 py-1" type="text" placeholder="Enter City"
+                    aria-label="search">
+                <a href="#" class="btn btn-primary">Search</a>
+                <ul class="recent-searches">
+                </ul>
+            </div>
+        </div> 
+        <div class = "row">
+            <aside class="col-l-3 bg-light">
+                </div>
+                <!-- previous city searches -->
+                
+            <!-- Weather Data -->
+            <div class="col-lg-9">
+                <div id="currentDate">
+                    <h5>
+                        <span class="namecity">City</span>
+                        <span class="currentdate">Date</span>
+                        <img src="" class="icon"></img>
+                        
+                     </h5>
+                    
+                    <p class="currenttemp">Temperature:</p>
+                    <p class="currenthumidity">Humidity:</p>
+                    <p class="current-wind-speed">Wind Speed:></p>
+                    <p class="current-uvindex">UV Index: </p>
+                </div>
+            
+                <div id="fiveday"></div>
+                <div class="row" id="forecast">
+                    <!-- <div class="col-md-3 future-day">day 1
+                        <p>Date</p>
+                        <p>Temperature</p>
+                        <p>Humidity</p>
+                    </div> -->
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
+
     </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
     </script>
 </body>
 
 </html>
-
-<!-- <aside class="row">
-    <div class="col-md-3 form-group" id="search">
-        <h1>Search for a City:</h1>
-        <div id="city-update" class="input-group md-form form-sm form-1 pl-0">
-            <input id="input" class="form-control my-0 py-1" type="text" placeholder="search" aria-label="search">
-            <span class="input-group-text" id="sometext"><i class="fas fa-search"></i></span>
-        </div>
-    </div>
-    <div id="previous-searches">
-        <ul id="recent-searches"></ul>
-    </div>
-    </div>
-</aside> -->
