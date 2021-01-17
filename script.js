@@ -5,7 +5,7 @@ $(document).ready(function () {
         savedInput = ["Detroit"] // If User refreshes page, keep last saved city entered
     };
     function citySearch(cityName) {
-
+        // Getting City Name from 5 Day 3 Hour Weather API
         var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=8c25f6eea238e937dd0781aab2ba1708";
         $.ajax({
             url: queryURL,
@@ -13,6 +13,7 @@ $(document).ready(function () {
         }).then(function (response) {
             var lon = response.city.coord.lon;
             var lat = response.city.coord.lat;
+            // Used a different API to retrieve the longitude and latitude. 5 Weather 3 Hour API does not retrieve lon + lat
             var oneCallUrl = "https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid=8c25f6eea238e937dd0781aab2ba1708";
             // console.log(response);
             $.ajax({
@@ -21,17 +22,17 @@ $(document).ready(function () {
             }).then(function (response) {
                 console.log(response);
 
-                // Displaying Current date/Temp/Hum/WindS
+                // Displaying Current date/Temp/Humidity/WindSpeed
                 var currentDate = Date(response.current.dt);
                 $(".namecity").text(cityName);
                 $(".currentdate").text(currentDate);
                 $(".icon").attr("src", "http://openweathermap.org/img/wn/" + response.current.weather[0].icon + ".png");
-                $(".currenttemp").text("Temperature: " + Math.floor((response.current.temp - 273) * 1.8 + 32));
+                $(".currenttemp").text("Temperature: " + Math.floor((response.current.temp - 273) * 1.8 + 32) + "°F");
                 $(".currenthumidity").text("Humidity: " + response.current.humidity + "%");
                 $(".current-wind-speed").text("Wind Speed: " + response.current.wind_speed);
                 $(".current-uvindex").text("UV Index: " + response.daily[0].uvi);
 
-                //Checking temp to determine uv index color
+                //If statement to check UV Index to determine the color based on temperature
                 if (response.daily[0].uvi <= 3) {
                     $("#uv-Index").addClass("green");
                 } else if (response.daily[0].uvi >= 3 && response.daily[0].uvi < 6) {
@@ -43,7 +44,7 @@ $(document).ready(function () {
                 } console.log(response.current.uvi);
 
 
-                // For loop for 5 Day Forecast
+                // For loop for for 5 Day forecast.
                 var days = response.daily;
                 //used empty function so that recent forecast is cleared once new forecast is displayed
                 $("#forecast").empty();
@@ -71,7 +72,7 @@ $(document).ready(function () {
 
     }
 
-    // Search Button to add results to list
+    // Search Button to add results to list and Grab API data
     $(".mainSearch").on("click", function () {
 
         var cityName = $("#input").val().trim();
@@ -85,7 +86,7 @@ $(document).ready(function () {
         citySearch(cityName);
 
     })
-
+      // On Click of the previous searched City, the user will be displayed with the current weather conditions of the city that was clicked.
     $(".recent-searches").on("click", (e) => {
         e.preventDefault();
         citySearch(e.target.id);
