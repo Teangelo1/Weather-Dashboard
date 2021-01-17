@@ -4,7 +4,9 @@ body > #bg-color {
     background-color: lightblue;
     position: absolute;
     z-index: -1;
-    background-image: url("https://i.pinimg.com/originals/92/84/1f/92841ff7c954321c3787553335bcb0b3.png");
+    background-image: url("https://pm1.narvii.com/6436/e733c4bd0e989649e85b166a7a807e94b0e05055_hq.jpg");
+    background-size: cover;
+    -webkit-filter: blur(2px);
 }
 
  .display-3 {
@@ -54,10 +56,12 @@ background: gray;
     align-items: center;
     float:right;
     border: solid black;
-    padding-right: 10px;
+    padding-bottom: 10px;
     width: 70%;
     margin-left: 20px;
     color: black;
+   
+
 
 }
 

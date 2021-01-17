@@ -52,11 +52,11 @@ $(document).ready(function () {
                     var date = new Date(days[i].dt); // Date is not displaying correctly
                     var temp = days[i].temp.day;
                     var humidity = days[i].humidity;
-                    var container = $("<div>").addClass("col-md-3 future-day");
+                    var container = $("<div>").addClass("col-3 future-day");
 
                     var dateContainer = $("<div>").text(date);
-                    var tempContainer = $("<div>").text(temp);
-                    var humidityContainer = $("<div>").text(humidity);
+                    var tempContainer = $("<div>").text("Temperature: " + (Math.floor(temp - 273)* 1.8 + 32) + "°F");
+                    var humidityContainer = $("<div>").text("Humidity: " + humidity + "%");
 
                     container.append(dateContainer, tempContainer, humidityContainer);
                     $("#forecast").append(container);

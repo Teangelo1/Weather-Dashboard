@@ -25,42 +25,41 @@
         <h1 class="display-3">Weather Dashboard</h1>
     </header>
 
-    </div>
-    </div>
 
-    <div class="container">
+
+
+
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h2 class="card-title">Weather Conditions</h2>
+            <input id="input" class="form-control my-0 py-1" type="text" placeholder="Enter City" aria-label="search">
+            <a href="#" class="btn btn-primary mainSearch">Search</a>
+            <ul class="recent-searches">
+            </ul>
+        </div>
+    </div>
+    
+        <div class="col-l-3 bg-light">
+        </div>
+        <!-- previous city searches -->
+
        
-        <div class="card" style="width: 18rem;">
-            <div class="card-body">
-                <h2 class="card-title">Weather Conditions</h2>
-                <input id="input" class="form-control my-0 py-1" type="text" placeholder="Enter City"
-                    aria-label="search">
-                <a href="#" class="btn btn-primary mainSearch">Search</a>
-                <ul class="recent-searches">
-                </ul>
-            </div>
-        </div> 
-        <div class = "row">
-            <aside class="col-l-3 bg-light">
-                </div>
-                <!-- previous city searches -->
-                
             <!-- Weather Data -->
             <div class="col-lg-9">
                 <div id="currentDate">
                     <h5>
                         <span class="namecity">City</span>
                         <span class="currentdate">Date</span>
-                        <img src="" class="icon"></img>
-                        
-                     </h5>
-                    
+                        <img class="icon" alt="">
+
+                    </h5>
+
                     <p class="currenttemp">Temperature:</p>
                     <p class="currenthumidity">Humidity:</p>
                     <p class="current-wind-speed">Wind Speed:></p>
                     <p class="current-uvindex" id="uv-Index">UV Index: </p>
                 </div>
-            
+
                 <div id="fiveday"></div>
                 <div class="row" id="forecast">
                     <!-- <div class="col-md-3 future-day">day 1
@@ -70,15 +69,17 @@
                     </div> -->
                 </div>
             </div>
-        </div>
+    
 
-    </div>
+
+
+
 
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="script.js"></script>
-    </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <script src="script.js"></script>
+    
 </body>
 
 </html>
