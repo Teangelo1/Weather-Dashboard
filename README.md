@@ -35,6 +35,6 @@ Goal: Create a Weather Dashboard to allow the user to enter the name of a city a
 * Openweather API
 * HTML Validator
 
-Here is Deployed URL: [Weather Dashboard]()
+Here is Deployed URL: [Weather Dashboard](https://teangelo1.github.io/Weather-Dashboard/)
 
 >Check those Weather conditions guys!!
