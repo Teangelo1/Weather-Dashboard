@@ -1,7 +1,10 @@
 $(document).ready(function () {
 
-
-    // Search Button to return results.
+     let savedInput = JSON.parse(localStorage.getItem("savedInput"));
+     if(savedInput === null){
+         savedInput = []
+     };
+     // Search Button to return results.
     $(".btn").on("click", function () {
 
        
@@ -21,23 +24,33 @@ $(document).ready(function () {
                 method: "GET"
             }).then(function (response) {
                 console.log(response);
+
+                // Displaying Current date/Temp/Hum/WindS
                var currentDate = Date(response.current.dt);
                 $(".namecity").text(cityName);
                 $(".currentdate").text(currentDate);
                 $(".icon").attr("src", "http://openweathermap.org/img/wn/" + response.current.weather[0].icon + ".png");
-                $(".currenttemp").text(response.current.temp);
+                $(".currenttemp").text("Temperature: " + response.current.temp);
                 $(".currenthumidity").text("Humidity: " + response.current.humidity + "%");
-                $(".current-wind-speed").text(response.current.wind_speed);
-                $(".current-uvindex").text(response.current.uvi);
+                $(".current-wind-speed").text("Wind Speed: " + response.current.wind_speed);
+                $(".current-uvindex").text(response.daily[0].uvi);
 
-                // Checking date to determine uv index color
-                 var uvindexColor = "";
-                 if(uvindexColor >= 3 && uvindexColor < 6){
+                //Checking date to determine uv index color
+                if (response.daily[0].uvi <= 3) {
+                    $("#uv-Index").addClass("green");
+                   } else if (response.daily[0].uvi >= 3 && response.daily[0].uvi < 6 ) {
+                     $("#uv-Index").addClass("yellow");
+                   } else if (response.daily[0].uvi >= 6 && response.daily[0].uvi < 9) {
+                       $("#uv-Index").addClass("orange");
+                   } else  { 
+                       $("#uv-Index").addClass("red");
+                   } console.log(response.current.uvi);
+            
 
-                 }
-
-
+                   // For loop for 5 Day Forecast
                var days = response.daily;
+               //used empty function so that recent forecast is cleared once new forecast is displayed
+               $("#forecast").empty();
 
                for(var i = 1; i < 6; i++) {
                 var date = new Date (days[i].dt);
@@ -51,17 +64,17 @@ $(document).ready(function () {
 
                 container.append(dateContainer,tempContainer,humidityContainer);
                 $("#forecast").append(container);
-                
-               
+                } 
+                savedInput.push(cityName);
 
-               }
+               window.localStorage.setItem("savedInput", JSON.stringify(savedInput));
             });
             
     
 });
         
 
-    })
+                })
 
 });
 
