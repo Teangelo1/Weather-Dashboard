@@ -2,28 +2,30 @@ body > #bg-color {
     height: 100%;
     width: 100%;
     background-color: lightblue;
-    clip-path: polygon(25% 0%, 100% 0, 100% 50%, 0 100%, 0 100%, 0 0);
     position: absolute;
     z-index: -1;
+    background-image: url("https://i.pinimg.com/originals/92/84/1f/92841ff7c954321c3787553335bcb0b3.png");
 }
 
-.display-3 {
-    color: white;
+ .display-3 {
+    color: black;
     font-family: 'Major Mono Display', cursive;
     text-align: center;
-    border: solid white 3px;
+    border: solid black 3px; 
     
 }
 
 h1 {
     
-    color: white;
+    color: gray
 }
 
 .card-body {
 overflow: auto;
 clear: both;
-float: right;
+float: left;
+background: gray;
+
     
 }
 
@@ -33,14 +35,14 @@ float: right;
 }
 
 .card-title {
-    color: white;
-    background: lightblue;
-    font-family: 'Major Mono Display'
+    color: black;
+    background: transparent;
+    font-family: 'Major Mono Display';
 }
 
 .btn.btn-primary {
-    background: lightblue;
-    border: white;
+    background: transparent;
+    border: black;
 }
 
 .row{
@@ -49,31 +51,41 @@ float: right;
 
 #currentDate {
     font-family: 'Major Mono Display';
-    justify-content: space-around;
     align-items: center;
     float:right;
     border: solid black;
     padding-right: 10px;
+    width: 70%;
+    margin-left: 20px;
+    color: black;
 
 }
 
 .future-day {
     border: solid black;;
     padding-right: 20px;
-
+    margin: 20px;
 }
 
 .green {
     background-color: green;
-    
+    border: solid 2px gray;
+    width: 70px;
 }
 
 .yellow {
     background-color: yellow;
+    border: solid 2px gray;
 }
 
 .red {
   background-color: red;
+  border: solid 2px gray;
+}
+
+#forecast {
+    align-items: center;
+    float: right
 }
 
 /* .weathermap {
