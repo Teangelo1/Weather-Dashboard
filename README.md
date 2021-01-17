@@ -32,6 +32,7 @@ Goal: Create a Weather Dashboard to allow the user to enter the name of a city a
 * CSS
 * JavaScript
 * jQuery
+* BootStrap
 * Openweather API
 * HTML Validator
 
